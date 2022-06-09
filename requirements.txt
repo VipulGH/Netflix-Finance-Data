@@ -1,0 +1,12 @@
+pandas
+yfinance
+pandas_datareader
+Flask==1.1.1
+gunicorn==20.0.4
+jinja2==3.0.3
+werkzeug==2.0.3
+boto3==1.10.50
+itsdangerous==2.0.1
+openpyxl==3.0.5
+IPython
+flask_googlecharts
