@@ -1,0 +1,45 @@
+{% extends "_base.htm" %}
+{% block title %}
+	Risk Analysis
+{% endblock %}
+
+{% block pageblock %}
+	<div id ="up">
+	<h1>Results <br/><br/></h1>
+	</div>
+	
+	<div id ="buttons">
+	<form id = "stats" method="post" action="/audit"><h2><input type="submit" name="audit" value ="Audit"/></h2></form>
+	<form id = "stats" method="post" action="/terminate"><h2><input type="submit" name="switchoff" value = "Switch Off"/></h2></form>
+	<form id = "stats" method="post" action="/reset"><h2><input type="submit" name="reset" value ="Reset" onclick="window.location='/';return false;" /></h2></form>
+	</div>
+	
+	{% if note %}
+	<table>
+		{{note}}
+	</table>
+	{% endif %}
+	<h1>  </h1>
+	
+	{% if note1 %}
+	<table>
+		{{note1}}
+	</table>
+	{% endif %}
+	<h1>  </h1>
+	
+	{% if note2 %}
+	<table>
+		{{note2}}
+	</table>
+	{% endif %}
+	
+	<h1>  </h1>
+	
+	<div id ="up">
+	<center><h2>95% and 99% Risk Values Chart:<br></br></h2>
+	<img src="https://image-charts.com/chart?cht=lc&chd=a:{{data}}&chs=750x300&chco=FF2027,0000FF,00FF00,000000&chxt=x,y&chdl=Risk_95%_Type1|Risk_99%_Type1|Risk_95%_Type2|Risk_99%_Type2&chg=5,1,1,1,333333&chdlp=t&chxl=0:|2012|2013|2014|2015|2016|2017|2018|2019|2020|2021|2022"
+	classed="displayed" alt="Graph: no internet connection."
+	align="center" width=""/></center><br/><br/>
+	</div>
+{% endblock %}

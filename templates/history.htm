@@ -1,0 +1,20 @@
+{% extends "_base.htm" %}
+{% block title %}
+	Audit
+{% endblock %}
+
+{% block pageblock %}
+	<div id ="up">
+	<h1>History <br/><br/></h1>
+	</div>
+	
+	<div id ="buttons">
+	<form id = "stats" method="post" action="/reset"><h2><input type="submit" name="reset" value ="Reset" onclick="window.location='/';return false;" /></h2></form>
+	</div>
+	
+	{% if note %}
+	<table>
+		{{note}}
+	</table>
+	{% endif %}
+{% endblock %}

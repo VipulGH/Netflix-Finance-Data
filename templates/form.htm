@@ -1,0 +1,37 @@
+	<div id = "down">
+		<h3>Mention the Resources and Type of AWS Service to use :&nbsp;</h3>
+		<form id = "stats" method="post" action="/analysis">
+			<h4>Number of Resources: <input type ="text" name ="resources" /><br/></h4>
+			<h4>AWS Scalable Service: 
+				<br><input type = "radio" id = "Lambda" name="service" value="Lambda" />
+				<label for = "Lambda">AWS Lambda</label><br>
+				<input type = "radio" id = "EC2" name="service" value ="EC2"/>
+				<label for = "EC2">AWS EC2 Instances</label></h4>
+			<h4>Number of Days: <input type ="text" action = /static/core.py name ="minhistory" /><br/></h4>
+			<h4>Number of Shots: <input type ="text" action = /static/core.py name = "shots" /><br/></h4>
+			<h4>Type of Signal: 
+				<br><input type = "radio" id = "buy" action = /static/core.py name="signal" value="Buy" />
+				<label for = "Buy">Buy</label><br>
+				<input type = "radio" id = "sell" action = /static/core.py name="signal" value ="Sell"/>
+				<label for = "Sell">Sell</label></h4>
+			<h4><input type="submit" name="analysis" value = "See Analysis"/>
+			<input type="submit" name="reset" value ="Reset Values" onclick="window.location='/';return false;" /><br/></h4>
+			<div id ="buttons">
+				<form id = "stats" method="post" action="/audit"><h2><input type="submit" name="audit" value ="Audit"/></h2></form>
+				<form id = "stats" method="post" action="/terminate"><h2><input type="submit" name="switchoff" value = "Switch Off"/></h2></form>
+			</div>
+		</form>
+		
+		{% if note %}
+		<h3 style="color: #E74C3C" font-size = 40px> 
+			{{note}}
+		</h3>
+		{% endif %}
+		{% if note1 %}
+		<h3 style="color: #E74C3C" font-size = 40px> 
+			{{note1}}
+		{% endif %}
+			
+		</h3>
+	</div>
+	
